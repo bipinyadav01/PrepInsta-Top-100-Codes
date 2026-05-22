@@ -1,0 +1,28 @@
+public class ExactlyXDivisors {
+    public static void main(String[] args) {
+        int n = 10; // Range (1 se lekar N tak)
+        int x = 3;  // Exactly kitne divisors chahiye
+
+        int finalCount = 0; // Aise kitne numbers mile, unka count
+
+        // Outer Loop: Range ke har number ko check karne ke liye
+        for (int i = 1; i <= n; i++) {
+            int divisorCount = 0;
+
+            // Inner Loop: Number 'i' ke divisors count karne ke liye
+            for (int j = 1; j <= i; j++) {
+                if (i % j == 0) {
+                    divisorCount++; // Agar poora divide ho gaya toh count badhao
+                }
+            }
+
+            // Agar divisors ka count exact X ke barabar hai
+            if (divisorCount == x) {
+                finalCount++;
+                System.out.println("Number found: " + i + " has exactly " + x + " divisors.");
+            }
+        }
+
+        System.out.println("\n1 se " + n + " ke beech kul " + finalCount + " aise integers hain jinke exact " + x + " divisors hain.");
+    }
+}
